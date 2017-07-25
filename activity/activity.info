@@ -1,0 +1,7 @@
+[Activity]
+name = OrtografiaAcentual
+activity_version = 1
+bundle_id = groupproyect.OrtografiaAcentual
+exec = sugar-activity OrtografiaAcentual.OrtografiaAcentual
+icon = notebook.svg
+licence = GPLv3+
