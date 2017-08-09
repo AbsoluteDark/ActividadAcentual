@@ -31,9 +31,33 @@ class OrtografiaAcentual(activity.Activity):
 		toolbar_box.show()
 
 	def agregar_canvas(self):
-		pass
+		self.canvas = Gtk.Grid()
+		play = Gtk.Button('Jugar')
+		self.canvas.attach(play, 0, 0, 1, 1)
+		
+		play.connect('clicked', self.jugar)
+		imagen = Gtk.Image.new_from_file('buho.png')
+		buf_image = imagen.get_pixbuf()
+		
+		nueva_img = Gtk.Image()
+		nuevo_pixbuf = buf_image.scale_simple(500,500,GdkPixbuf.InterpType.BILINEAR )
+		nueva_img.set_from_pixbuf(nuevo_pixbuf)
+		self.canvas.attach_next_to(nueva_img, play, Gtk.PositionType.BOTTOM, 1,  1)
+		self.canvas.show_all()
 
-	def agregar_style(self):
-		pass
+	def jugar(self, btn):
+		for widget in self.canvas:
+			self.canvas.remove(widget)
+
+		label = Gtk.Label('Nueva Pantalla')
+		self.canvas.attach(label, 1, 1, 1, 1)
+		self.canvas.show_all()
+
+		Boton2 = Gtk.Button('Oprimir Respuesta correcta')
+		self.canvas.attach(Boton2, 0, 0, 3, 1)
+		self.canvas.show_all()
+		Boton2.connect('clicked', self.jugar)
 
 
+	#def agregar_style(self):
+		#pass
