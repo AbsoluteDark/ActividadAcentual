@@ -59,5 +59,5 @@ class OrtografiaAcentual(activity.Activity):
 		Boton2.connect('clicked', self.jugar)
 
 
-	#def agregar_style(self):
-		#pass
+	def agregar_style(self):
+		pass
